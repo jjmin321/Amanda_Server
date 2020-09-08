@@ -24,6 +24,7 @@ func main() {
 		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
 	}))
 	e.Static("/image", "profileimage")
+	e.GET("/showMyInfo", controller.ShowMyInfo, middleware.JWT([]byte("secret")), jwt.VerifyAccessToken)
 	e.GET("/showUserInfo", controller.ShowUserInfo)
 	e.GET("/showUserStar", controller.ShowUserStar)
 	e.POST("/signin", controller.SignIn)
