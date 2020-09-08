@@ -4,15 +4,15 @@
 	e.POST("/signup", controller.SignUp)
 	e.POST("/updateProfileImage", controller.UpdateProfileImage, middleware.JWT([]byte("secret")), jwt.VerifyAccessToken) -->
 
-# 아만다 (아무도 만나지 못한다)
+# 💔아만다 (아무도 만나지 못한다)
 
-## 주요 기능 
+## 📱주요 기능 
 1. 회원가입 후 자신의 프로필 사진을 등록 
 2. 사진과 내용을 배경으로 사용자들이 검색 또는 메인페이지에서 프로필을 보고 평점을 부여 
 3. 별점 순위를 바탕으로 자신의 프로필 사진의 위치가 메인페이지에서 달라짐.
 4. 마음에 들거나 신기한 프로필을 가진 사용자의 프로필에 댓글을 달 수 있음.
 
-## 기대 효과 
+## ☃️기대 효과 
 1. 답답한 기숙사 속 적적한 학우들의 마음에 조금이나마 버팀목이 될만한 소울메이트를 찾음으로써 학교생활을 더욱 즐겁고 행복하게 만들어 줌.
 2. 자신의 spec과 visual을 평가받음으로써 자존감을 높이거나, 현실을 직시하여 더욱 발전하게 되는 계기가 될 수 있음.
 3. 몰랐던 학우들과 친하게 지내게 되는 계기가 될 수 있음.
@@ -23,7 +23,7 @@
 | Development Language | React, TypeScript | GO , postgresql & GORM     |               
 | Development Tool     | Visual Studio Code  | Visual Studio Code |
 
-# API - json, query, form 형식 모두 지원
+# API
 
 ## @GET /showMyInfo
     - Request : JWT(Require)
