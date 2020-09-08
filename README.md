@@ -17,6 +17,8 @@
         
     - /showUserInfo
         - id (Optional), name (Optional)
+
+    - /showAllInfo
     
     - /showUserStar
         - idx (Require)
