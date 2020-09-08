@@ -8,7 +8,7 @@ import (
 
 // CreateCommentParam - 파라미터 형식 정의 구조체
 type CreateCommentParam struct {
-	Idx     uint   `json:"idx" form:"idx" query:"idx"`
+	ID      string `json:"id" form:"id" query:"id"`
 	Comment string `json:"comment" form:"comment" query:"comment"`
 }
 
@@ -19,7 +19,7 @@ func CreateComment(c echo.Context) error {
 	if err := c.Bind(u); err != nil {
 		return err
 	}
-	UserComment := &database.UserComment{FkUserID: ID, FkObjectIdx: u.Idx, Comment: u.Comment}
+	UserComment := &database.UserComment{FkUserID: ID, FkObjectID: u.ID, Comment: u.Comment}
 	err := database.DB.Create(UserComment).Error
 	if err != nil {
 		return c.JSON(500, map[string]interface{}{
