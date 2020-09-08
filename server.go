@@ -34,5 +34,7 @@ func main() {
 	e.POST("/updateProfileImage", controller.UpdateProfileImage, middleware.JWT([]byte("secret")), jwt.VerifyAccessToken)
 	e.POST("/createComment", controller.CreateComment, middleware.JWT([]byte("secret")), jwt.VerifyAccessToken)
 	e.POST("/updateComment", controller.UpdateComment, middleware.JWT([]byte("secret")), jwt.VerifyAccessToken)
+	e.POST("/createReplyComment", controller.CreateReplyComment, middleware.JWT([]byte("secret")), jwt.VerifyAccessToken)
+	e.POST("/updateReplyComment", controller.UpdateReplyComment, middleware.JWT([]byte("secret")), jwt.VerifyAccessToken)
 	e.Logger.Fatal(e.Start(":3000"))
 }
