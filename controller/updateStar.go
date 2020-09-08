@@ -24,7 +24,7 @@ func UpdateStar(c echo.Context) error {
 			"message": "모든 값을 입력해주세요",
 		})
 	}
-	ID := c.Get("ID").(uint)
+	ID := c.Get("ID").(string)
 	UserStar := &database.UserStar{FkObjectIdx: u.Idx, Star: u.Star, FkUserID: ID}
 	err := database.DB.Create(UserStar).Error
 	if err != nil {
