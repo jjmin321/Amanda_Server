@@ -13,6 +13,7 @@ type SignInParam struct {
 	Pw string `json:"pw" form:"pw" query:"pw"`
 }
 
+// SignIn - 로그인 메서드
 func SignIn(c echo.Context) error {
 	u := new(SignInParam)
 	if err := c.Bind(u); err != nil {

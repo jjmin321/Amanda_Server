@@ -32,7 +32,7 @@ func UpdateProfileImage(c echo.Context) error {
 			"message": "파일을 여는 데 실패하였습니다. 다시 시도해주세요.",
 		})
 	}
-	dst, err := os.Create("../ProfileImage/" + fileName)
+	dst, err := os.Create("ProfileImage/" + fileName)
 	defer dst.Close()
 	if err != nil {
 		return c.JSON(500, map[string]interface{}{
