@@ -49,6 +49,10 @@
     - Request : idx (검색할 댓글의 인덱스, Require)
     - Response : 해당 댓글의 모든 답글
 
+## @GET /showMyStar
+    - Request : JWT
+    - Response : 내가 매긴 모든 평점들의 목록
+
 ## @POST /signup
     - Request : id (Require), pw (Require), name (Require), ismanager (Optional), description (Optional)
     - Response : 회원가입 성공 여부
