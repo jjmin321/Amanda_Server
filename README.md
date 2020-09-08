@@ -19,7 +19,13 @@
     - /showAllInfo
     
     - /showUserStar
-        - idx (Require)
+        - idx (사용자 인덱스, Require)
+
+    - /showComment
+        - id (사용자 아이디, Require)
+    
+    - /showReplyComment
+        - idx (댓글 인덱스, Require)
 
 - @POST
     - /signup
