@@ -11,7 +11,7 @@ type ShowCommentParam struct {
 	ID string `json:"id" form:"id" query:"id"`
 }
 
-// ShowComment - 유저 정보를 보여주는 메서드
+// ShowComment - 댓글을 보여주는 메서드
 func ShowComment(c echo.Context) error {
 	u := new(ShowCommentParam)
 	if err := c.Bind(u); err != nil {
