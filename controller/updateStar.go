@@ -2,7 +2,6 @@ package controller
 
 import (
 	"Amanda_Server/database"
-	"log"
 
 	"github.com/labstack/echo"
 )
@@ -26,9 +25,19 @@ func UpdateStar(c echo.Context) error {
 		})
 	}
 	ID := c.Get("ID").(string)
-	log.Print(ID)
-	UserStar := &database.UserStar{FkObjectIdx: u.Idx, Star: u.Star, FkUserID: ID}
-	err := database.DB.Create(UserStar).Error
+	UserStar := &database.UserStar{}
+	err := database.DB.Where("fk_object_idx = ? AND fk_user_id = ?", u.Idx, ID).Find(UserStar).Error
+	if err != nil {
+		CreateUserStar := &database.UserStar{FkObjectIdx: u.Idx, Star: u.Star, FkUserID: ID}
+		err := database.DB.Create(CreateUserStar).Error
+		if err != nil {
+			return c.JSON(500, map[string]interface{}{
+				"status":  500,
+				"message": "평점 등록 실패",
+			})
+		}
+	}
+	err = database.DB.Model(UserStar).Update("star", u.Star).Where("fk_object_idx = ? AND fk_user_id", u.Idx, ID).Error
 	if err != nil {
 		return c.JSON(500, map[string]interface{}{
 			"status":  500,

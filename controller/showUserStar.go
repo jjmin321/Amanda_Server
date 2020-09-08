@@ -17,10 +17,12 @@ func ShowUserStar(c echo.Context) error {
 	if err := c.Bind(u); err != nil {
 		return err
 	}
+	var starCnt uint
+	starCnt = 0
 	UserStar := &[]database.UserStar{}
 	err := database.DB.Where("fk_object_idx = ?", u.Idx).Find(UserStar).Error
 	for _, v := range *UserStar {
-		v.Star
+		starCnt += v.Star
 	}
 
 	if err != nil {
