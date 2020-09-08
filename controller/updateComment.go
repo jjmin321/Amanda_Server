@@ -8,6 +8,7 @@ type UpdateCommentParam struct {
 	Comment string `json:"comment" form:"comment" query:"comment"`
 }
 
+// UpdateComment - 댓글 수정 메서드
 func UpdateComment(c echo.Context) error {
 	u := new(UpdateCommentParam)
 	if err := c.Bind(u); err != nil {
