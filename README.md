@@ -17,17 +17,11 @@
 2. 자신의 spec과 visual을 평가받음으로써 자존감을 높이거나, 현실을 직시하여 더욱 발전하게 되는 계기가 될 수 있음.
 3. 몰랐던 학우들과 친하게 지내게 되는 계기가 될 수 있음.
 
-- 운영체제 
-    - Mac os Mojave
-
-- 개발스택
-    - Go
-    - Echo framework
-    - Gorm & Postgresql
-
-- 개발도구
-    - Goland
-    - VsCode
+## Stack
+|                      | WEB 차승호, 정성훈     | Server 제정민        |             
+|:--------------------:|:---------------:|:------------------:|
+| Development Language | React, TypeScript | GO , postgresql & GORM     |               
+| Development Tool     | Visual Studio Code  | Visual Studio Code |
 
 # API - json, query, form 형식 모두 지원
 
