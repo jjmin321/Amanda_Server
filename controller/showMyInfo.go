@@ -10,7 +10,7 @@ import (
 func ShowMyInfo(c echo.Context) error {
 	ID := c.Get("ID")
 	User := &database.User{}
-	err := database.DB.Where("user_id = ?", ID).Error
+	err := database.DB.Where("user_id = ?", ID).Find(User).Error
 	if err != nil {
 		return c.JSON(500, map[string]interface{}{
 			"status":  500,

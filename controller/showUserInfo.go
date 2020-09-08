@@ -19,7 +19,7 @@ func ShowUserInfo(c echo.Context) error {
 		return err
 	}
 	User := &[]database.User{}
-	err := database.DB.Where("user_id = ? OR name = ?", u.ID, u.Name).Error
+	err := database.DB.Where("user_id = ? OR name = ?", u.ID, u.Name).Find(User).Error
 	if err != nil {
 		return c.JSON(500, map[string]interface{}{
 			"status":  500,
