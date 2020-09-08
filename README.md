@@ -8,7 +8,10 @@
 
 ## API - json, query, form 형식 모두 지원
 댓글 작성
+댓글 수정
 답글 작성
+답글 수정
+댓글, 답글 보여주기
 
 - @GET 
     - /showMyInfo
