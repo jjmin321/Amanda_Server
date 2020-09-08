@@ -2,6 +2,7 @@ package controller
 
 import (
 	"Amanda_Server/database"
+	"log"
 
 	"github.com/labstack/echo"
 )
@@ -25,6 +26,7 @@ func UpdateStar(c echo.Context) error {
 		})
 	}
 	ID := c.Get("ID").(string)
+	log.Print(ID)
 	UserStar := &database.UserStar{FkObjectIdx: u.Idx, Star: u.Star, FkUserID: ID}
 	err := database.DB.Create(UserStar).Error
 	if err != nil {

@@ -3,7 +3,6 @@ package controller
 import (
 	"Amanda_Server/database"
 	"Amanda_Server/library/jwt"
-	"log"
 
 	"github.com/labstack/echo"
 )
@@ -20,7 +19,6 @@ func SignIn(c echo.Context) error {
 	if err := c.Bind(u); err != nil {
 		return err
 	}
-	log.Print(u.ID, u.Pw)
 	User := &database.User{}
 	err := database.DB.Where("user_id = ? AND pw = ?", u.ID, u.Pw).Find(User).Error
 	if err != nil {

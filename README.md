@@ -8,19 +8,25 @@
 
 ## API - json, query, form 형식 모두 지원
 아이디 중복검사
-별점 등록
+유저의 별점, 참여자 수
 댓글 작성
 답글 작성
 
 - @GET 
-    - /signin
-        - ID (Require), PW (Require)
     - /showUserInfo
-        - ID (Optional), Name (Optional)
+        - id (Optional), name (Optional)
 
 - @POST
     - /signup
-        - ID (Require) , PW (Require), Name (Require), IsManager (Optional), Description (Require)
+        - id (Require) , pw (Require), name (Require), ismanager (Optional), description (Require)
 
     - /updateProfileImage
         - image (File, Require)
+        - JWT
+
+    - /signin
+        - id (Require), pw (Require)
+
+    - /updateStar
+        - idx (Require), star (Require)
+        - JWT
