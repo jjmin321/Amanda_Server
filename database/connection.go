@@ -37,6 +37,7 @@ func Connect() {
 		&UserReplyComment{},
 	)
 
+	db.Model(&UserStar{}).AddForeignKey("fk_object_idx", "users(idx)", "RESTRICT", "RESTRICT")
 	db.Model(&UserStar{}).AddForeignKey("fk_user_idx", "users(idx)", "RESTRICT", "RESTRICT")
 	db.Model(&UserComment{}).AddForeignKey("fk_user_idx", "users(idx)", "RESTRICT", "RESTRICT")
 	db.Model(&UserComment{}).AddForeignKey("fk_object_idx", "users(idx)", "RESTRICT", "RESTRICT")
