@@ -21,7 +21,7 @@ func main() {
 	e := echo.New()
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowOrigins: []string{"*"},
-		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
+		AllowHeaders: []string{"*"},
 	}))
 	e.Static("/image", "profileimage")
 	e.GET("/showMyInfo", controller.ShowMyInfo, middleware.JWT([]byte("secret")), jwt.VerifyAccessToken)
