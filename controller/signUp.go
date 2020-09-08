@@ -27,8 +27,16 @@ func SignUp(c echo.Context) error {
 			"message": "모든 값을 입력해주세요",
 		})
 	}
-	User := &database.User{UserID: u.ID, Pw: u.Pw, Name: u.Name, IsManager: u.IsManager}
-	err := database.DB.Create(User).Error
+	User := &database.User{}
+	err := database.DB.Where("user_id = ?", u.ID).Find(User).Error
+	if err == nil {
+		return c.JSON(400, map[string]interface{}{
+			"status":  400,
+			"message": "이미 사용중인 아이디입니다.",
+		})
+	}
+	User = &database.User{UserID: u.ID, Pw: u.Pw, Name: u.Name, IsManager: u.IsManager}
+	err = database.DB.Create(User).Error
 	if err != nil {
 		return c.JSON(500, map[string]interface{}{
 			"status":  500,
