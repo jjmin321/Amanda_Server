@@ -28,6 +28,7 @@ func main() {
 	e.GET("/showUserInfo", controller.ShowUserInfo)
 	e.GET("/showAllInfo", controller.ShowAllInfo)
 	e.GET("/showUserStar", controller.ShowUserStar)
+	e.GET("/showComment", controller.ShowComment)
 	e.POST("/signin", controller.SignIn)
 	e.POST("/signup", controller.SignUp)
 	e.POST("/updateStar", controller.UpdateStar, middleware.JWT([]byte("secret")), jwt.VerifyAccessToken)

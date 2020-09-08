@@ -6,14 +6,14 @@ import (
 	"github.com/labstack/echo"
 )
 
-// ShowCommentInfoParam - 파라미터 형식 정의 구조체
-type ShowCommentInfoParam struct {
+// ShowCommentParam - 파라미터 형식 정의 구조체
+type ShowCommentParam struct {
 	ID string `json:"id" form:"id" query:"id"`
 }
 
-// ShowCommentInfo - 유저 정보를 보여주는 메서드
-func ShowCommentInfo(c echo.Context) error {
-	u := new(ShowCommentInfoParam)
+// ShowComment - 유저 정보를 보여주는 메서드
+func ShowComment(c echo.Context) error {
+	u := new(ShowCommentParam)
 	if err := c.Bind(u); err != nil {
 		return err
 	}
