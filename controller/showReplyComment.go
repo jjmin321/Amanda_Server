@@ -11,7 +11,7 @@ type ShowReplyCommentParam struct {
 	Idx string `json:"idx" form:"idx" query:"idx"`
 }
 
-// ShowReplyComment - 유저 정보를 보여주는 메서드
+// ShowReplyComment - 답글을 보여주는 메서드
 func ShowReplyComment(c echo.Context) error {
 	u := new(ShowReplyCommentParam)
 	if err := c.Bind(u); err != nil {
