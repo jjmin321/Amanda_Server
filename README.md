@@ -12,6 +12,9 @@
 답글 작성
 
 - @GET 
+    - /showMyInfo
+        - JWT
+        
     - /showUserInfo
         - id (Optional), name (Optional)
 
