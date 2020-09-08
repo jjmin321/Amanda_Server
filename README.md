@@ -47,3 +47,11 @@
     - /updateComment
         - idx (수정할 댓글의 인덱스, Require), comment (수정할 댓글, Require)
         - JWT
+
+    - /createReplyComment
+        - idx (답글을 달 댓글의 인덱스, Require), comment(작성할 답글, Require)
+        - JWT
+    
+    - /updateReplyComment
+        - idx (수정을 할 답글의 인덱스, Require), comment(작성할 답글, Require)
+        - JWT
