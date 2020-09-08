@@ -22,13 +22,13 @@ func ShowComment(c echo.Context) error {
 	if err != nil {
 		return c.JSON(500, map[string]interface{}{
 			"status":  500,
-			"message": "멤버 리스트를 읽어오지 못했습니다.",
+			"message": "댓글을 읽어오지 못했습니다.",
 			"comment": "null",
 		})
 	}
 	return c.JSON(200, map[string]interface{}{
 		"status":  200,
-		"message": "멤버 리스트를 읽어오는 데 성공했습니다.",
+		"message": "댓글을 읽어오는 데 성공했습니다.",
 		"comment": UserComment,
 	})
 }
