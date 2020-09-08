@@ -22,7 +22,7 @@ func UpdateMyInfo(c echo.Context) error {
 
 	if u.Name != "" {
 		User := &database.User{}
-		err := database.DB.Model(User).Update("name", u.Name).Where("user_id = ?", ID).Error
+		err := database.DB.Model(User).Where("user_id = ?", ID).Update("name", u.Name).Error
 		if err != nil {
 			return c.JSON(500, map[string]interface{}{
 				"status":  500,
@@ -32,7 +32,7 @@ func UpdateMyInfo(c echo.Context) error {
 	}
 	if u.Description != "" {
 		User := &database.User{}
-		err := database.DB.Model(User).Update("description", u.Description).Where("user_id = ?", ID).Error
+		err := database.DB.Model(User).Where("user_id = ?", ID).Update("description", u.Description).Error
 		if err != nil {
 			return c.JSON(500, map[string]interface{}{
 				"status":  500,
