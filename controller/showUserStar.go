@@ -36,7 +36,7 @@ func ShowUserStar(c echo.Context) error {
 	return c.JSON(200, map[string]interface{}{
 		"status":  200,
 		"message": "평점 정보를 읽어오는 데 성공했습니다.",
-		"평점":      0,
+		"평점":      starCnt,
 		"참여자 수":   len(*UserStar),
 	})
 }

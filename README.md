@@ -17,6 +17,9 @@
         
     - /showUserInfo
         - id (Optional), name (Optional)
+    
+    - /showUserStar
+        - idx (Require)
 
 - @POST
     - /signup
