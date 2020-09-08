@@ -19,8 +19,9 @@ func UpdateMyInfo(c echo.Context) error {
 	if err := c.Bind(u); err != nil {
 		return err
 	}
-	User := &database.User{}
+
 	if u.Name != "" {
+		User := &database.User{}
 		err := database.DB.Model(User).Update("name", u.Name).Where("user_id = ?", ID).Error
 		if err != nil {
 			return c.JSON(500, map[string]interface{}{
@@ -30,6 +31,7 @@ func UpdateMyInfo(c echo.Context) error {
 		}
 	}
 	if u.Description != "" {
+		User := &database.User{}
 		err := database.DB.Model(User).Update("description", u.Description).Where("user_id = ?", ID).Error
 		if err != nil {
 			return c.JSON(500, map[string]interface{}{
