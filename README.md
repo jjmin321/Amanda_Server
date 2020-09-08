@@ -41,3 +41,11 @@
     - /updateMyInfo
         - name (Require), description (Require)
         - JWT 
+    
+    - /createComment
+        - id (작성할 대상의 아이디, Require), comment (작성할 댓글, Require)
+        - JWT
+        
+    - /updateComment
+        - idx (수정할 댓글의 인덱스, Require), comment (수정할 댓글, Require)
+        - JWT
