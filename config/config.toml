@@ -1,0 +1,9 @@
+[app]
+name = "Amanda"
+
+[database]
+name = "Amanda_server"
+username = "jejeongmin"
+password = "qwerz123"
+host = "127.0.0.1"
+port = "5432"
