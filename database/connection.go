@@ -12,8 +12,10 @@ type connectionMethod interface {
 	Connect()
 }
 
+// DB - 데이터베이스 전역변수
 var DB *gorm.DB
 
+// Connect - 데이터베이스 구조 생성, 연결 하는 메서드
 func Connect() {
 	dbConf := config.Config.DB
 
