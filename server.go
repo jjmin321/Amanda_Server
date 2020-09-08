@@ -2,6 +2,7 @@ package main
 
 import (
 	"Amanda_Server/config"
+	"Amanda_Server/controller"
 	"Amanda_Server/database"
 
 	_ "github.com/jinzhu/gorm/dialects/postgres"
@@ -21,5 +22,6 @@ func main() {
 		AllowOrigins: []string{"*"},
 		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
 	}))
+	e.POST("/signup", controller.SignUp)
 	e.Logger.Fatal(e.Start(":3000"))
 }
