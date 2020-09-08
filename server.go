@@ -30,6 +30,7 @@ func main() {
 	e.POST("/signin", controller.SignIn)
 	e.POST("/signup", controller.SignUp)
 	e.POST("/updateStar", controller.UpdateStar, middleware.JWT([]byte("secret")), jwt.VerifyAccessToken)
+	e.POST("/updateMyInfo", controller.UpdateMyInfo, middleware.JWT([]byte("secret")), jwt.VerifyAccessToken)
 	e.POST("/updateProfileImage", controller.UpdateProfileImage, middleware.JWT([]byte("secret")), jwt.VerifyAccessToken)
 	e.Logger.Fatal(e.Start(":3000"))
 }

@@ -32,3 +32,7 @@
     - /updateStar
         - idx (Require), star (Require)
         - JWT
+    
+    - /updateMyInfo
+        - name (Require), description (Require)
+        - JWT 
