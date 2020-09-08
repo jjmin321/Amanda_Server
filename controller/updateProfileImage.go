@@ -48,7 +48,7 @@ func UpdateProfileImage(c echo.Context) error {
 	}
 	// err = model.UpdateImageInTeamMember(Idx, fileName)
 	User := &database.User{}
-	err = database.DB.Model(User).Where("user_id = ? AND pw", ID, Pw).Update("image", fileName).Error
+	err = database.DB.Model(User).Where("user_id = ? AND pw = ?", ID, Pw).Update("image", fileName).Error
 	if err != nil {
 		return c.JSON(500, map[string]interface{}{
 			"status":  500,
