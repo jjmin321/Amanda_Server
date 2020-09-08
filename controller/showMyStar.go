@@ -6,8 +6,8 @@ import (
 	"github.com/labstack/echo"
 )
 
-// ShowMyStarInfo - 내거 먀간 푱좀 = 가져오는 메서드
-func ShowMyStarInfo(c echo.Context) error {
+// ShowMyStar - 내거 먀간 평점 정보들을 가져오는 메서드
+func ShowMyStar(c echo.Context) error {
 	ID := c.Get("ID")
 	UserStar := &[]database.UserStar{}
 	err := database.DB.Where("fk_user_id = ?", ID).Find(UserStar).Error
