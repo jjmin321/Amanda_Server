@@ -37,7 +37,7 @@ func UpdateStar(c echo.Context) error {
 			})
 		}
 	}
-	err = database.DB.Model(UserStar).Where("fk_object_idx = ? AND fk_user_id", u.Idx, ID).Update("star", u.Star).Error
+	err = database.DB.Model(UserStar).Where("fk_object_idx = ? AND fk_user_id = ?", u.Idx, ID).Update("star", u.Star).Error
 	if err != nil {
 		return c.JSON(500, map[string]interface{}{
 			"status":  500,
