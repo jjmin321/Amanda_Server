@@ -20,7 +20,7 @@ func UpdateReplyComment(c echo.Context) error {
 	}
 	ID := c.Get("ID").(string)
 	UserReplyComment := &database.UserReplyComment{}
-	err := database.DB.Model(UserReplyComment).Update("comment", u.Comment).Where("idx = ? AND fk_user_id = ?", u.Idx, ID).Error
+	err := database.DB.Model(UserReplyComment).Where("idx = ? AND fk_user_id = ?", u.Idx, ID).Update("comment", u.Comment).Error
 	if err != nil {
 		return c.JSON(500, map[string]interface{}{
 			"status":  500,
