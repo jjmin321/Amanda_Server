@@ -1,10 +1,8 @@
-<!-- e.Static("/image", "profileimage")
-	e.GET("/signin", controller.SignIn)
-	e.GET("/showUserInfo", controller.ShowUserInfo)
-	e.POST("/signup", controller.SignUp)
-	e.POST("/updateProfileImage", controller.UpdateProfileImage, middleware.JWT([]byte("secret")), jwt.VerifyAccessToken) -->
+# Amanda 아무도 만나지 못한다
+💔 대구소프트웨어고등학교 학생들이 더 이상 외모 순위를 두고 다투지 않게, 평가와 피드백을 받게 해주는 커뮤니케이션 서비스입니다
 
-# 💔아만다 (아무도 만나지 못한다)
+## Motive
+- 
 
 ## 📱주요 기능 
 1. 회원가입 후 자신의 프로필 사진을 등록 
@@ -19,10 +17,13 @@
 4. 몰랐던 학우들과 친하게 지내게 되는 계기가 될 수 있음.
 
 ## Stack
-|                      | WEB 차승호, 정성훈     | Server 제정민        |             
+
+## Stack
+|                      | Web     | Server        | 
 |:--------------------:|:---------------:|:------------------:|
-| Development Language | React, TypeScript | GO , postgresql & GORM     |               
-| Development Tool     | Visual Studio Code  | Visual Studio Code |
+| Developer | 차승호, 정성훈 | 제정민 | 
+| Develop Language | TypeScript | GO| 
+| Develop Tool     | Visual Studio Code  | Visual Studio Code | 
 
 # API
 
